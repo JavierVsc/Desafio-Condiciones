@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.seccion {
+  margin-top: 40px;
+}
+/* PARTE 1 */
+.img-borde {
+  width: 420px;
+  max-width: 100%;
+  cursor: pointer;
+  display: block;
+  margin-top: 15px;
+}
+
+/* PARTE 2 */
+.contenedor-stickers {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Todos a la Misma altura */
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.sticker {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sticker img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
+
+.sticker input {
+  width: 200px;
+  padding: 8px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.boton-verificar {
+  margin-top: 25px;
+}
+
+.resultado {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* PARTE 3 */
+.contenedor-password {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+select {
+  padding: 6px;
+}

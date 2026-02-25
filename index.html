@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desafío Condiciones</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+  <h1>Desafío Condiciones</h1>
+
+  <!-- PARTE 1 (IMAGEN CON BORDE ROJO) -->
+
+  <section class="seccion">
+    <h2>1.- Agregar y Quitar Borde Rojo de Imagen</h2>
+    <img
+      id="img-borde"
+      class="img-borde"
+      src="assets/img/paisajeParaBordeRojo.png"
+      alt="Paisaje"
+      onclick="
+        let imagen = document.querySelector('#img-borde');
+        if (imagen.style.border === '' || imagen.style.border === 'none') {
+          imagen.style.border = '2px solid red';
+        } else {
+          imagen.style.border = 'none';
+        }
+      "
+    />
+  </section>
+
+  <!-- PARTE 2 (SELECCIÓN DE STICKERS) -->
+
+  <section class="seccion">
+    <h2>2.- Selección de Stickers</h2>
+
+    <div class="contenedor-stickers">
+
+      <div class="sticker">
+        <img src="assets/img/sticker_1.png" alt="Sticker 1" />
+        <input id="sticker1" type="number" min="0" value="0" />
+      </div>
+
+      <div class="sticker">
+        <img src="assets/img/sticker_2.png" alt="Sticker 2" />
+        <input id="sticker2" type="number" min="0" value="0" />
+      </div>
+
+      <div class="sticker">
+        <img src="assets/img/sticker_3.png" alt="Sticker 3" />
+        <input id="sticker3" type="number" min="0" value="0" />
+      </div>
+
+    </div>
+
+    <div class="boton-verificar">
+      <button onclick="
+        let s1 = Number(document.querySelector('#sticker1').value);
+        let s2 = Number(document.querySelector('#sticker2').value);
+        let s3 = Number(document.querySelector('#sticker3').value);
+
+        let total = s1 + s2 + s3;
+
+        let resultado = document.querySelector('#resultado-stickers');
+
+        if (total <= 10) {
+          resultado.textContent = 'Llevas ' + total + ' stickers';
+        } else {
+          resultado.textContent = 'Llevas demasiados stickers';
+        }
+      ">
+        Verificar
+      </button>
+
+      <p id="resultado-stickers" class="resultado"></p>
+    </div>
+  </section>
+
+<!-- PARTE 3 (VERIFICADOR DE PASSWORD) -->
+
+  <section class="seccion">
+    <h2>3.- Verificador de Contraseñas</h2>
+    <p>Selecciona 3 Dígitos y presiona Ingresar</p>
+
+    <div class="contenedor-password">
+      <select id="digito1">
+        <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+        <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+        <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+      </select>
+
+      <select id="digito2">
+        <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+        <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+        <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+      </select>
+
+      <select id="digito3">
+        <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+        <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+        <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+      </select>
+
+      <button onclick="
+        let d1 = document.querySelector('#digito1').value;
+        let d2 = document.querySelector('#digito2').value;
+        let d3 = document.querySelector('#digito3').value;
+
+        let password = d1 + d2 + d3;
+
+        let resultado = document.querySelector('#resultado-password');
+
+        if (password === '911') {
+          resultado.textContent = 'password 1 correcto';
+        } else if (password === '714') {
+          resultado.textContent = 'password 2 es correcto';
+        } else {
+          resultado.textContent = 'password incorrecto';
+        }
+      ">
+        Ingresar
+      </button>
+    </div>
+
+    <p id="resultado-password" class="resultado"></p>
+  </section>
+
+</body>
+</html>
